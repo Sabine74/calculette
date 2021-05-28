@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet calculatrice</title>
+  <link rel="stylesheet" src="#.scss">
+</head>
+<body>
+  
+<!--Header--
+calc - theme - 123 - select--
+-->
+  <div class="display">
+    <ul> <!--liste style none inline block-->
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <p id="calc">calc</p>
+    <p id="theme">THEME</p>
+  </div>
+<!--END --Header--
+calc - theme - 123 - select--
+-->
+
+<!--Screen-->
+  <input type="texte" class ="calculator-screen" value="0"/>
+<!--END screen-->
+
+<!--content buttons calculator-->
+<div class="calculator">
+
+<!--première ligne-->
+  <div class="first-row">
+    <button type="button" class="number" value="7">7</button>
+    <button type="button" class="number" value="8">8</button>
+    <button type="button" class="number" value="9">9</button>
+    <button type="button" class="operator" value="DEL">DEL</button>
+  </div>
+<!--END première ligne-->
+<!--deuxième ligne-->
+  <div class="second-row">
+    <button type="button" class="number" value="4">4</button>
+    <button type="button" class="number" value="5">5</button>
+    <button type="button" class="number" value="6">6</button>
+    <button type="button" class="operator" value="+">+</button>
+  </div>
+<!--END deuxième ligne--> 
+<!--troisième ligne-->
+  <div class="third-row">
+    <button type="button" class="number" value="1">1</button>
+    <button type="button" class="number" value="2">2</button>
+    <button type="button" class="number" value="3">3</button>
+    <button type="button" class="operator" value="-">-</button>
+  </div>
+<!--END troisième ligne-->
+<!--quatrième ligne-->
+  <div class="fourth-row">
+    <button type="button" class="operator" value=".">.</button>
+    <button type="button" class="number" value="0">0</button>
+    <button type="button" class="operator" value="/">/</button>
+    <button type="button" class="operator" value="*">x</button>
+  </div>
+<!--END quatrième ligne-->
+<!--dernière ligne-->
+<div class="fifth-row">
+  <button type="button" class="operator" value="RESET">RESET</button>
+  <button type="button" class="operator" value="=">=</button>
+</div>
+<!--END dernière ligne-->
+</div><!--div calculator-->
+
+
+</body>
+</html>
