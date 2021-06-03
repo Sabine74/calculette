@@ -1,92 +1,95 @@
-body{
-  background: rgb(32, 32, 32);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+:root {
+  --main-color:blue;
 }
-*{
-  margin:0;
-  padding:0;
+
+body {
+  background: #202020;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.container{
- max-width: 50%;
- background: white;
- padding:20px;
- border-radius:4px;
- margin: 50px;
+
+* {
+  margin: 0;
+  padding: 0;
 }
-.header{
-  background: rgb(241, 241, 241);
-  display:flex;
+
+.container {
+  max-width: 50%;
+  background: var(--main-color);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 50px;
+}
+
+.header {
+  background: #f1f1f1;
+  display: flex;
   flex-wrap: nowrap;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.header-logo{ 
-  display:flex;
+.header-logo {
+  display: flex;
   justify-content: start;
-  font-size:large;
+  font-size: large;
 }
-.header-left{ 
-  display:flex;
+.header-left {
+  display: flex;
   justify-content: end;
 }
-#header-left-title{
+.header-left-title {
   flex-direction: row;
   align-content: flex-end;
   font-size: smaller;
-} 
-.header-selector{
-  list-style-type: none;
-  display:inline-flex;
-  align-content: flex-end;
-} 
-.header-theme{
-  color:grey;
 }
-input.screen{
-  border:0;
+.header-selector {
+  list-style-type: none;
+  display: inline-flex;
+  align-content: flex-end;
+}
+.header-theme {
+  color: grey;
+}
+
+input.screen {
+  border: 0;
   display: flex;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: 700;
   font-size: larger;
-
 }
-.keyboard{
+
+.keyboard {
   display: grid;
   border-radius: 5px;
-  background:#e9e2e2ef;
+  background: #e9e2e2ef;
   grid-gap: 10px 10px;
   justify-content: space-evenly;
+  padding: 15px 0px;
+  /*&-row:first-child{
+    margin-top:15px;
+  }/*&:nth-child(2)*/
+  /*&-row:last-child
+    margin-bottom:15px;*/
 }
-.keyboard-first{
-  margin-top:15px;
-} 
-/*
-.keyboard-second{}
-.keyboard-thir{}
-.keyboard-fourth{}*/
-
-.keyboard-fifth{
-  margin-bottom:15px;
-}
-.keyboard-btn{
+.keyboard-btn {
   background: white;
-  border-radius:5px;
-  width:50px;
+  border-radius: 5px;
+  width: 50px;
   height: 30px;
-  
 }
-.keyboard-btn__blue{
-  background-color:rgb(38, 182, 170);
-  color:white;
+.keyboard-btn__blue {
+  background-color: #26b6aa;
+  color: white;
 }
-.keyboard-btn__double{
-  width:105px;
-  height:30px;
+.keyboard-btn__red {
+  background-color: #ff5e00;
+  color: white;
+}
+.keyboard-btn__double {
+  width: 105px;
+  height: 30px;
   font-weight: 700;
 }
-.keyboard-btn__red{
-  background-color:rgb(255, 94, 0);
-  color:white;
-}
 
+/*# sourceMappingURL=style.css.map */
