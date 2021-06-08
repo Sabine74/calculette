@@ -1,9 +1,18 @@
 :root {
-  --main-color:blue;
+  --background-color:#3b4664;
+  --main-color: #252d44;
+  --tab-color:#eae3db;
+  --reset-del-color:#647299;
+  --equal-color:#d13f30;
+  --text-color:#252d44;
+  --contrast-color:#ffffff;
 }
 
 body {
-  background: #202020;
+  height: 100vh;
+  background: var(--background-color);
+  display: flex;
+  align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -13,11 +22,15 @@ body {
 }
 
 .container {
-  max-width: 50%;
-  background: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 540px;
+  height: 720px;
+  background: var(--background-color);
   padding: 20px;
-  border-radius: 4px;
-  margin: 50px;
+  border-radius: 8px;
+  margin: auto;
 }
 
 .header {
@@ -57,6 +70,7 @@ input.screen {
   padding-bottom: 5px;
   font-weight: 700;
   font-size: larger;
+  text-align: end;
 }
 
 .keyboard {
