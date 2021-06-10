@@ -13,6 +13,7 @@ body {
   background: var(--background-color);
   display: flex;
   align-items: center;
+  font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 .header {
-  background: #f1f1f1;
+  background: var(--background-color);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -43,40 +44,87 @@ body {
   display: flex;
   justify-content: start;
   font-size: large;
+  color: var(--contrast-color);
 }
 .header-left {
   display: flex;
   justify-content: end;
+  color: var(--contrast-color);
 }
 .header-left-title {
   flex-direction: row;
   align-content: flex-end;
   font-size: smaller;
 }
-.header-selector {
-  list-style-type: none;
+.header-selectors {
   display: inline-flex;
   align-content: flex-end;
+  width: auto;
+  border-radius: 50px;
+  background: var(--main-color);
+}
+.header-selectors .radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 5px;
+  margin: 1px 0 0;
+}
+.header-selectors .radio-item input[type=radio] {
+  display: none;
+}
+.header-selectors .radio-item label:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.header-selectors .radio-item input[type=radio]:checked + label:after {
+  border-radius: 15px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: " ";
+  display: block;
+  background: var(--equal-color);
+  transition: position ease-in-out 0.5s;
 }
 .header-theme {
-  color: grey;
+  color: var(--contrast-color);
 }
 
 input.screen {
   border: 0;
+  border-radius: 5px;
   display: flex;
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  height: 130px;
   font-weight: 700;
-  font-size: larger;
   text-align: end;
+  font-size: 4rem;
+  background: var(--main-color);
+  color: var(--contrast-color);
+}
+input.screen:focus {
+  outline: none;
+}
+input.screen::placeholder {
+  margin: 10px;
+  color: var(--contrast-color);
 }
 
 .keyboard {
   display: grid;
+  height: 480px;
+  width: 100%;
   border-radius: 5px;
-  background: #e9e2e2ef;
+  background: var(--main-color);
   grid-gap: 10px 10px;
   justify-content: space-evenly;
   padding: 15px 0px;
@@ -85,25 +133,35 @@ input.screen {
   }/*&:nth-child(2)*/
   /*&-row:last-child
     margin-bottom:15px;*/
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.keyboard-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+.keyboard-row:last-child {
+  grid-template-columns: 2fr 2fr;
 }
 .keyboard-btn {
-  background: white;
+  background: var(--tab-color);
   border-radius: 5px;
-  width: 50px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  font-weight: bolder;
 }
 .keyboard-btn__blue {
-  background-color: #26b6aa;
-  color: white;
+  background: var(--reset-del-color);
+  color: var(--contrast-color);
 }
 .keyboard-btn__red {
-  background-color: #ff5e00;
-  color: white;
+  background: var(--equal-color);
+  color: var(--contrast-color);
 }
 .keyboard-btn__double {
-  width: 105px;
-  height: 30px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */
