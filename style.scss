@@ -46,6 +46,7 @@ body {
     display: flex;
     justify-content: end;
     color:var(--contrast-color);
+    position: relative;
     &-title {
       flex-direction: row;
       align-content: flex-end;
@@ -92,9 +93,17 @@ body {
       }
     }
   }
-  
+  &-themes {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+  }
   &-theme {
     color:var(--contrast-color);
+    text-align: center;
   }
 }
 

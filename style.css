@@ -50,6 +50,7 @@ body {
   display: flex;
   justify-content: end;
   color: var(--contrast-color);
+  position: relative;
 }
 .header-left-title {
   flex-direction: row;
@@ -95,8 +96,17 @@ body {
   background: var(--equal-color);
   transition: position ease-in-out 0.5s;
 }
+.header-themes {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+}
 .header-theme {
   color: var(--contrast-color);
+  text-align: center;
 }
 
 input.screen {
