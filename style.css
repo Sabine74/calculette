@@ -3,10 +3,19 @@
   --main-color: #252d44;
   --tab-color:#eae3db;
   --reset-del-color:#647299;
+  --reste-del-shadow:#424e74;
   --equal-color:#d13f30;
+  --equal-shadow:#8f2316;
   --text-color:#252d44;
+  --text-btn:#4b4f5b;
   --contrast-color:#ffffff;
   --bg-screen:#181f32;
+}
+
+* {
+  font-family: 'Spartan', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -18,13 +27,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  font-weight: 700;
 }
 
 .container {
@@ -41,7 +44,7 @@ body {
   width: 540px;
   height: 720px;
   background: var(--background-color);
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
   margin: auto;
 }
@@ -53,7 +56,7 @@ body {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  margin: 15px;
+  margin: 30px 5px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -78,7 +81,7 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  padding: 5px;
+  padding: 0px;
   color: var(--contrast-color);
   position: relative;
 }
@@ -89,9 +92,9 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-line-pack: end;
-      align-content: flex-end;
+      align-content: end;
   font-size: smaller;
-  margin: 10px;
+  margin: 10px 25px;
 }
 
 .header-selectors {
@@ -165,7 +168,9 @@ input.screen {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding-top: 35px;
+  padding-bottom: 30px;
   height: 130px;
   font-weight: 700;
   text-align: end;
@@ -206,7 +211,7 @@ input.screen::placeholder {
   width: 90%;
   border-radius: 10px;
   background: var(--main-color);
-  grid-gap: 20px 20px;
+  grid-gap: 20px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -225,7 +230,7 @@ input.screen::placeholder {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 25px;
+  grid-gap: 20px;
 }
 
 .keyboard-row:last-child {
@@ -236,12 +241,12 @@ input.screen::placeholder {
 
 .keyboard-btn {
   background: var(--tab-color);
-  border-radius: 8px;
+  border-radius: 9px;
   width: 100%;
-  height: 80px;
-  font-size: 2.5rem;
-  color: var(--text-color);
-  font-weight: bolder;
+  height: 70px;
+  font-size: 32px;
+  color: var(--text-btn);
+  font-weight: 700;
   -webkit-box-shadow: inset 0px -4px 0px 0px #919191;
           box-shadow: inset 0px -4px 0px 0px #919191;
 }
@@ -249,25 +254,30 @@ input.screen::placeholder {
 .keyboard-btn__blue {
   background: var(--reset-del-color);
   color: var(--contrast-color);
-  -webkit-box-shadow: inset 0px -4px 0px 0px var(--background-color);
-          box-shadow: inset 0px -4px 0px 0px var(--background-color);
+  font-weight: 600;
+  font-size: 25px;
+  -webkit-box-shadow: inset 0px -4px 0px 0px var(--reste-del-shadow);
+          box-shadow: inset 0px -4px 0px 0px var(--reste-del-shadow);
 }
 
 .keyboard-btn__red {
   background: var(--equal-color);
   color: var(--contrast-color);
-  -webkit-box-shadow: inset 0px -4px 0px 0px var(--equal-color);
-          box-shadow: inset 0px -4px 0px 0px var(--equal-color);
+  font-size: 30px;
+  -webkit-box-shadow: inset 0px -4px 0px 0px var(--equal-shadow);
+          box-shadow: inset 0px -4px 0px 0px var(--equal-shadow);
 }
 
 .keyboard-btn__double {
   width: 230px;
   display: -ms-grid;
   display: grid;
+  font-weight: 600;
+  font-size: 25px;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */
