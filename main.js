@@ -3,6 +3,7 @@ const themeSelectors = document.querySelectorAll('input[name="ritem"]')
 const keys = document.querySelectorAll('button')
 const screen = document.querySelector('.screen')
 const root = document.documentElement;
+let operatorClicked = false;
 
 // MAIN
 // Update colors for each theme
@@ -24,30 +25,56 @@ themeSelectors.forEach(e => {
     })
 })
 
-// Eval value input on keyup
-screen.addEventListener('keyup', () => {
-    console.log(eval(screen.value));
-})
-
 // Log button clicked
-keys.forEach( k => {
+keys.forEach(k => {
     k.addEventListener("click", () => {
-        console.log(k);
+        switch (k.value) {
+            case "=":
+                if(operatorClicked){
+                    screen.value = eval(screen.value);
+                }
+                break;
+            case "DEL":
+                screen.value = screen.value.slice(0, -1)
+                break;
+            case "RESET":
+                screen.value = "0"
+                break;
+            default:
+                if (screen.value === "0") {
+                    return screen.value = k.value
+                }
+                // Check if operator was clicked
+                if(ifOperators(k.value)){
+                    operatorClicked = true;
+                    // Check if operator is last character
+                    if (ifOperators(screen.value.slice(-1))){
+                        screen.value = screen.value.slice(0, -1)
+                    }
+                }
+                // Write new character in screen
+                screen.value = screen.value + k.value
+                break;
+        }
     })
 })
 
 // SHORTHANDS
-const setStyle =(vr , vl) => root.style.setProperty(vr, vl)
+const setStyle = (vr, vl) => root.style.setProperty(vr, vl);
+
+function ifOperators (operator) {
+    return ["+","-","/","*"].includes(operator)
+}
 
 // LIBRARY 
 
 function handleColors(theme) {
     let color = {};
-    if(theme === 1){
+    if (theme === 1) {
         color = colors.first;
-    } else if(theme === 2){
+    } else if (theme === 2) {
         color = colors.second;
-    } else if(theme === 3){
+    } else if (theme === 3) {
         color = colors.third;
     } else {
         return 0;
@@ -62,7 +89,11 @@ function handleColors(theme) {
     setStyle('--text-btn', color.text_btn)
     setStyle('--contrast-color', color.text_header)
     setStyle('--bg-screen', color.bg_screen)
+    setStyle('--text-reset-del', color.text_reset_del)
+    setStyle('--text-equal', color.text_equal)
+    setStyle('--btn-shadow', color.btn_shadow)
 }
+
 
 
 // VARIABLES
@@ -70,7 +101,7 @@ function handleColors(theme) {
 const colors = {
     first: {
         bg: "#3b4664",
-        bg_keyboard:  "#252d44",
+        bg_keyboard: "#252d44",
         bg_screen: "#181f32",
         btn: "#eae3db",
         reset_del: "#647299",
@@ -84,44 +115,42 @@ const colors = {
         equal_shadow: "#8f2316"
     },
     second: {
-        bg:"#e6e6e6",
-        bg_keyboard:"#d3cdcd",
-        bg_screen:"#eeeeee",
-        btn:"#e5e4e0",
-        reset_del:"#388187",
-        equal:"#c85401",
-        text_header:"#2e2f27",
-        text_reset_del:"#ffffff",
-        text_equal:"#ffffff",
-        text_btn:"#2f2f27",
-        btn_shadow:"#a79f94",
-        reste_del_shadow:"#1a5d65",
-        equal_shadow:"#873b01"
+        bg: "#e6e6e6",
+        bg_keyboard: "#d3cdcd",
+        bg_screen: "#eeeeee",
+        btn: "#e5e4e0",
+        reset_del: "#388187",
+        equal: "#c85401",
+        text_header: "#2e2f27",
+        text_reset_del: "#ffffff",
+        text_equal: "#ffffff",
+        text_btn: "#2f2f27",
+        btn_shadow: "#a79f94",
+        reste_del_shadow: "#1a5d65",
+        equal_shadow: "#873b01"
     },
     third: {
-        bg:"#17062a",
-        bg_keyboard:"#1e0836",
-        bg_screen:"#1e0836",
-        btn:"#331b4d",
-        reset_del:"#56077c",
-        equal:"#00decf",
-        text_header:"#ffe643",
-        text_reset_del:"#ffffff",
-        text_equal:"#000000",
-        text_btn:"#ffe643",
-        btn_shadow:"#851c9c",
-        reste_del_shadow:"#ba14f4",
-        equal_shadow:"#6dfaf1"
+        bg: "#17062a",
+        bg_keyboard: "#1e0836",
+        bg_screen: "#1e0836",
+        btn: "#331b4d",
+        reset_del: "#56077c",
+        equal: "#00decf",
+        text_header: "#ffe643",
+        text_reset_del: "#ffffff",
+        text_equal: "#000000",
+        text_btn: "#ffe643",
+        btn_shadow: "#851c9c",
+        reste_del_shadow: "#ba14f4",
+        equal_shadow: "#6dfaf1"
     }
 }
 
 //Marek 
 /*
 Boucles
-
 for (let i = 0; i < themeSelectors.length; i++) {
     console.log(themeSelectors[i]);
-
 }
 console.log("For each");
 themeSelectors.forEach( e => {

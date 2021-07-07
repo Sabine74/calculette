@@ -10,6 +10,8 @@
   --text-btn:#4b4f5b;
   --contrast-color:#ffffff;
   --bg-screen:#181f32;
+  --text-reset-del:#ffffff;
+  --text-equal:#ffffff;
 }
 
 * {
@@ -247,13 +249,13 @@ input.screen::placeholder {
   font-size: 32px;
   color: var(--text-btn);
   font-weight: 700;
-  -webkit-box-shadow: inset 0px -4px 0px 0px #919191;
-          box-shadow: inset 0px -4px 0px 0px #919191;
+  -webkit-box-shadow: inset 0px -4px 0px 0px var(--btn-shadow);
+          box-shadow: inset 0px -4px 0px 0px var(--btn-shadow);
 }
 
 .keyboard-btn__blue {
   background: var(--reset-del-color);
-  color: var(--contrast-color);
+  color: var(--text-reset-del);
   font-weight: 600;
   font-size: 25px;
   -webkit-box-shadow: inset 0px -4px 0px 0px var(--reste-del-shadow);
@@ -262,7 +264,7 @@ input.screen::placeholder {
 
 .keyboard-btn__red {
   background: var(--equal-color);
-  color: var(--contrast-color);
+  color: var(--text-equal);
   font-size: 30px;
   -webkit-box-shadow: inset 0px -4px 0px 0px var(--equal-shadow);
           box-shadow: inset 0px -4px 0px 0px var(--equal-shadow);
